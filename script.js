@@ -50,7 +50,8 @@ ctx.lineWidth = 5;
 
 ctx.beginPath();
 ctx.arc(300, 300, 275, 0, Math.PI * 2, false);
-ctx.strokeStyle = 'lime'; // Color
+ctx.strokeStyle = '#000'; // Color
+ctx.fillStyle = '#000423';
 ctx.fill();
 ctx.stroke();
 
@@ -58,20 +59,6 @@ ctx.stroke();
 
 
 
-    ctx.beginPath();
-    ctx.moveTo(300, 300);
-    ctx.lineTo(300, 100);
-    ctx.strokeStyle = 'cyan';
-    ctx.fill();
-    ctx.stroke();
-    
-    ctx.beginPath();
-    
-    ctx.moveTo(300, 300);
-    ctx.lineTo(100, 300);
-    ctx.strokeStyle = 'red';
-    ctx.fill();
-    ctx.stroke();
 
 
 
@@ -79,8 +66,13 @@ ctx.stroke();
 
 ctx.beginPath();
 ctx.arc(300, 300, 10, 0, Math.PI * 2, false);
-ctx.fillStyle = 'white'; // Color
+ctx.fillStyle = '#001aef'; // Color
 ctx.strokeStyle = 'transparent';
+// Set shadow properties
+// ctx.shadowOffsetX = 0;    // Horizontal shadow offset
+// ctx.shadowOffsetY = 2;    // Vertical shadow offset
+// ctx.shadowBlur = 10;       // Shadow blur radius
+// ctx.shadowColor = "white"; 
 ctx.fill();
 ctx.stroke();
 
@@ -89,4 +81,39 @@ let download = document.getElementById('download');
 download.href = canvas.toDataURL();
 
 
+// function rotateSecond() {
+    
+//     ctx.translate(300, 300);
+//     ctx.rotate(Math.PI *6/180 );
+//     ctx.translate(-300, -300);
+    
+//     ctx.beginPath();
+//     ctx.moveTo(300, 300);
+//     ctx.lineTo(300, 100);
+//     ctx.strokeStyle = '#000f89';
+//     ctx.fill();
+//     ctx.stroke();
+// }
+function rotateMinute() {
+    
+    ctx.beginPath();
+    
+    
+    ctx.translate(300, 300);
+    ctx.rotate(Math.PI /1800 );
+    ctx.translate(-300, -300);
+    ctx.moveTo(300, 300);
+    ctx.lineTo(100, 300);
+    ctx.strokeStyle = '#0015bc';
+    ctx.fill();
+    ctx.stroke();
+    
+        
+}
 
+// setInterval(() => {
+//     rotateSecond();
+    
+// }, 1000);
+
+setInterval(rotateMinute, 1); // Call the function every second
